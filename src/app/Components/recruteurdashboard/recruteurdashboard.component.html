@@ -1,0 +1,21 @@
+<style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    
+    .router-outlet-container {
+      margin-top: 90px;
+      margin-left: 300px;
+    }
+  </style>
+  
+  <div class="container">
+    <app-recruteurheader></app-recruteurheader>
+    <div class="router-outlet-container">
+      <router-outlet></router-outlet>
+    </div>
+    <app-recruteursidebar></app-recruteursidebar>
+  </div>
+  

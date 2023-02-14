@@ -1,0 +1,22 @@
+<table class="table table-striped" style="margin-right: 500px;">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Position</th>
+        <th scope="col">Number of applicants</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of Offredetails;let ind = index">
+        <th scope="row">{{ind}}</th>
+        <td>{{i.Position}}</td>
+        <td>12</td>
+        <td><i class="bi bi-pen-fill"></i> 
+            <i class="bi bi-info-square-fill"></i>
+            <i class="bi bi-trash-fill"></i>
+        </td>
+   
+      </tr>
+    </tbody>
+  </table>

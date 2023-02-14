@@ -1,0 +1,101 @@
+<main >
+  <div class="container">
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <!-- <div class="d-flex justify-content-center py-4">
+
+              <img height="200px" width="200px" src="assets/img/TR1.png" alt="">
+              <br>
+              <span class="d-none d-lg-block">TunirecruT</span>
+            </div> -->
+            <div class="card mb-3">
+              <span style="text-align: center; font-weight: bold;font-size: large;background-color: midnightblue;color: white;">TunirecruT</span>
+              <div class="card mb-3">
+                <div class="card mb-3">
+
+                  <div class="card-body">
+
+                    <div class="pt-4 pb-2">
+                      <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    </div>
+                    <div *ngIf="err?.error?.msg" class="alert alert-primary" role="alert">
+                      {{ err.error.msg }}
+                    </div>
+
+                    <form class="row g-3 needs-validation" (ngSubmit)="ajouterrecruteur(Recruteurnew.value)">
+                      <div class="col-12">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input #name="ngModel" name="Recruteurnew.name" [(ngModel)]="Recruteurnew.name"
+                          [ngModelOptions]="{standalone: true}" type="text" class="form-control" required
+                          (blur)="name.touched=true">
+                        <div *ngIf="name.touched && name.invalid" class="errors">
+                          <div *ngIf="name.errors?.required" style="color: red;">Nom obligatoire </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label class="form-label">Your Email</label>
+                        <input #email="ngModel" name="Recruteurnew.email" [(ngModel)]="Recruteurnew.email"
+                          [ngModelOptions]="{standalone: true}" type="email" class="form-control" required
+                          (blur)="email.touched=true">
+                        <div *ngIf="email.touched && email.invalid" class="errors">
+                          <div *ngIf="email.errors?.required" style="color: red;">Email obligatoire </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Password</label>
+                        <input #password="ngModel" name="Recruteurnew.password" [(ngModel)]="Recruteurnew.password"
+                          [ngModelOptions]="{standalone: true}" type="password" class="form-control" required
+                          (blur)="password.touched=true">
+                        <div *ngIf="password.touched && password.invalid" class="errors">
+                          <div *ngIf="password.errors?.required" style="color: red;">Mot de passe obligatoire </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label">Company Name</label>
+                        <input #company="ngModel" name="Recruteurnew.Company" [(ngModel)]="Recruteurnew.Company"
+                          [ngModelOptions]="{standalone: true}" type="text" class="form-control" required
+                          (blur)="company.touched=true">
+                        <div *ngIf="company.touched && company.invalid" class="errors">
+                          <div *ngIf="company.errors?.required" style="color: red;">Nom de l'entreprise obligatoire
+                          </div>
+                        </div>
+                      </div>
+                      <label class="form-label">Your picture</label>
+                      <div class="col-sm-10">
+                        <input (change)="select($event)" type="file" class="form-control" type="file">
+                      </div>
+                      <div class="col-12">
+                        <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                      </div>
+                      <div class="col-12">
+                        <p class="small mb-0">Already have an account? <a [routerLink]="['/LoginCompany']">Login</a></p>
+                      </div>
+                    </form>
+
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="credits">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+              contact : marouanimedyassine@gmail.com
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main><!-- End #main -->

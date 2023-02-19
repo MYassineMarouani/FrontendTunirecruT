@@ -1,1 +1,26 @@
-<p>ajouteroffre works!</p>
+<div style="margin-right: 500px;">
+    <h1>Add an offer</h1>
+    <form class="row g-3"  (ngSubmit)="ajouteroffre(NewOffer.value)">
+        <div class="col-12">
+          <label for="inputNanme4" class="form-label">Position</label>
+          <input type="text" class="form-control"  [(ngModel)]="NewOffer.Position"
+          [ngModelOptions]="{standalone: true}" id="inputNanme4">
+        </div>
+        <div class="col-12">
+          <label for="inputEmail4" class="form-label">Banner</label>
+          <input (change)="select($event)" type="file" id="example-fileinput" class="form-control">
+        </div>
+    
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Description</label>
+          <textarea name="" id="" cols="30" rows="10" type="text" class="form-control"  [(ngModel)]="NewOffer.Description"
+          [ngModelOptions]="{standalone: true}"></textarea>
+        
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+        
+      </form>
+</div>

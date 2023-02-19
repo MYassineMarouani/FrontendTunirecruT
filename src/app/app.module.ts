@@ -16,6 +16,17 @@ import { MyprofileComponent } from './Components/myprofile/myprofile.component';
 import { TouslesoffresComponent } from './Components/touslesoffres/touslesoffres.component';
 import { DetailsoffreComponent } from './Components/detailsoffre/detailsoffre.component';
 import { AjouteroffreComponent } from './Components/ajouteroffre/ajouteroffre.component';
+import { UnauthorizedComponent } from './Components/unauthorized/unauthorized.component';
+import { CandidatedashboardComponent } from './Components/candidatedashboard/candidatedashboard.component';
+import { StatistiquesComponent } from './Components/statistiques/statistiques.component';
+import { LogincandidateComponent } from './Components/logincandidate/logincandidate.component';
+import { RegistercandidateComponent } from './Components/registercandidate/registercandidate.component';
+import { OffersComponent } from './Components/offers/offers.component';
+import { DetailsComponent } from './Components/details/details.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { CandidateheaderComponent } from './Components/candidateheader/candidateheader.component';
+import { ApplystatusComponent } from './Components/applystatus/applystatus.component';
+import { AllappliersComponent } from './Components/allappliers/allappliers.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +40,24 @@ import { AjouteroffreComponent } from './Components/ajouteroffre/ajouteroffre.co
     MyprofileComponent,
     TouslesoffresComponent,
     DetailsoffreComponent,
-    AjouteroffreComponent
+    AjouteroffreComponent,
+    UnauthorizedComponent,
+    CandidatedashboardComponent,
+    StatistiquesComponent,
+    LogincandidateComponent,
+    RegistercandidateComponent,
+    OffersComponent,
+    DetailsComponent,
+    ProfileComponent,
+    CandidateheaderComponent,
+    ApplystatusComponent,
+    AllappliersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     FormBuilder,

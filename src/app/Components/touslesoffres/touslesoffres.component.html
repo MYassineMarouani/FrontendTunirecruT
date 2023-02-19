@@ -1,22 +1,43 @@
-<table class="table table-striped" style="margin-right: 500px;">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Position</th>
-        <th scope="col">Number of applicants</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let i of Offredetails;let ind = index">
-        <th scope="row">{{ind}}</th>
-        <td>{{i.Position}}</td>
-        <td>12</td>
-        <td><i class="bi bi-pen-fill"></i> 
-            <i class="bi bi-info-square-fill"></i>
-            <i class="bi bi-trash-fill"></i>
-        </td>
-   
-      </tr>
-    </tbody>
-  </table>
+<h1>all offers you added ( {{Offredetails.length}} )</h1> 
+<input type="text" (keyup)="search()" [(ngModel)]="searchTerm" placeholder="Search by position" class="form-control">
+<table class="table table-striped" style="margin-right: 700px;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Position</th>
+      <th scope="col">Number of applicants</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of pagedOffredetails; let ind = index">
+      <th scope="row">{{(currentPage - 1) * itemsPerPage + ind + 1}}</th>
+      <td>{{i.Position}}</td>
+      <td>12</td>
+      <td>
+        <i [routerLink]="['/Recruteurdashboard/detailsoffer', i._id]" class="bi bi-info-square-fill"></i>
+        <i (click)="delete(i._id)" class="bi bi-trash-fill"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item" [ngClass]="{disabled: currentPage == 1}">
+      <a class="page-link" (click)="currentPage = 1"><i class="bi bi-chevron-double-left"></i></a>
+    </li>
+    <li class="page-item" [ngClass]="{disabled: currentPage == 1}">
+      <a class="page-link" (click)="currentPage = currentPage - 1"><i class="bi bi-chevron-left"></i></a>
+    </li>
+    <li class="page-item" [ngClass]="{active: page == currentPage}" *ngFor="let page of pages">
+      <a class="page-link" (click)="currentPage = page">{{page}}</a>
+    </li>
+    <li class="page-item" [ngClass]="{disabled: currentPage == totalPages}">
+      <a class="page-link" (click)="currentPage = currentPage + 1"><i class="bi bi-chevron-right"></i></a>
+    </li>
+    <li class="page-item" [ngClass]="{disabled: currentPage == totalPages}">
+      <a class="page-link" (click)="currentPage = totalPages"><i class="bi bi-chevron-double-right"></i></a>
+    </li>
+  </ul>
+</nav>
+

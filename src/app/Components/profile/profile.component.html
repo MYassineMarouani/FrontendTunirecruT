@@ -1,0 +1,60 @@
+<div style="width: 600px;margin-right: 300px;">
+    <form  >
+        <div class="row mb-3">
+            <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+            <div class="col-md-8 col-lg-9">
+                <img  [src]=" endpoint.url + 'getimage/' + Candidatedetails.Image" height="100px"  alt="Profile">
+                <div class="pt-2">
+                    <input (change)="select($event)" type="file" id="example-fileinput" class="form-control">
+                </div>
+            </div>
+        </div>
+    
+        <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Name</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="Candidatedetails.name" [(ngModel)]="Candidatedetails.name"
+                [ngModelOptions]="{standalone: true}" name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">LastName</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="Candidatedetails.lastname" [(ngModel)]="Candidatedetails.lastname"
+                [ngModelOptions]="{standalone: true}" name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+            </div>
+        </div>
+    
+        <div class="row mb-3">
+            <label for="company" class="col-md-4 col-lg-3 col-form-label">Age</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="Candidatedetails.Company" [(ngModel)]="Candidatedetails.Age"
+                [ngModelOptions]="{standalone: true}" name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="company" class="col-md-4 col-lg-3 col-form-label">Telephone</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="Candidatedetails.Company" [(ngModel)]="Candidatedetails.Telephone"
+                [ngModelOptions]="{standalone: true}" name="company" type="text" class="form-control" id="company" value="Lueilwitz, Wisoky and Leuschke">
+            </div>
+        </div>
+
+    
+        <div class="row mb-3">
+            <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+            <div class="col-md-8 col-lg-9">
+                <input name="Candidatedetails.email" [(ngModel)]="Candidatedetails.email"
+                [ngModelOptions]="{standalone: true}"  name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+            </div>
+        </div>
+        <label for="Email" class="col-md-4 col-lg-3 col-form-label">CV</label>
+        <br>
+        <input (change)="select1($event)" type="file" id="example-fileinput" class="form-control">
+    
+    <br>
+        <div class="text-center">
+            <button (click)='modifiercandidate()' type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </form><!-- End Profile Edit Form -->
+</div>

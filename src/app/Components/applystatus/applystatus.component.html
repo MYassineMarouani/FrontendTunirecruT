@@ -1,0 +1,36 @@
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+
+      <div class="card-body">
+        <h5 class="card-title">Your Applications Status </h5>
+
+        <table class="table table-borderless datatable">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Position</th>
+              <th scope="col">Company</th>
+              <th scope="col">Date of application</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of Applydetails; let ind = index">
+              <th scope="row"><a href="#">{{ind}}</a></th>
+              <td>{{i.OfferPosition}}</td>
+              <td><a href="#" class="text-primary">{{i.Recruteurcompany}}</a></td>
+              <td>{{i.Date}}</td>
+              <td>
+                <span [ngClass]="{'badge bg-success': i.Etat === 'Accepted', 'badge bg-danger': i.Etat === 'Rejected', 'badge bg-warning': i.Etat === 'In Progress'}">
+                  <span style="color: black;">{{i.Etat}}</span>
+                </span>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>

@@ -13,12 +13,16 @@
     <tr *ngFor="let i of pagedOffredetails; let ind = index">
       <th scope="row">{{(currentPage - 1) * itemsPerPage + ind + 1}}</th>
       <td>{{i.Position}}</td>
-      <td>12</td>
+      <td>{{i.numAppliers}}</td> <!-- display the number of appliers for this offer -->
+      <td>
+        <i [routerLink]="['/Recruteurdashboard/allappliers', i._id]" class="bi bi-list"></i>
+      </td>
       <td>
         <i [routerLink]="['/Recruteurdashboard/detailsoffer', i._id]" class="bi bi-info-square-fill"></i>
         <i (click)="delete(i._id)" class="bi bi-trash-fill"></i>
       </td>
     </tr>
+    
   </tbody>
 </table>
 <nav aria-label="Page navigation example">

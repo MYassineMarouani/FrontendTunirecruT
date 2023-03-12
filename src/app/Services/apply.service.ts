@@ -18,4 +18,9 @@ export class ApplyService {
   getbyidCandidate(id: any){
     return this.http.get(this.endpoint.url + 'Apply/getbyidCandidate/'+ id);
   }
+  update(id: any, Offrenew: any){
+
+    return this.http.put(this.endpoint.url + 'Apply/update/' + id , Offrenew);
+
+  }
 }

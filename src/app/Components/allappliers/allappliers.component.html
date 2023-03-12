@@ -1,1 +1,40 @@
-<p>allappliers works!</p>
+<div class="card" style="margin-right: 300px;">
+    <div class="card-body">
+        <h5 class="card-title">All appliers for position {{offerdetails.Position}}</h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">View CV </th>
+                    <th scope="col">Change Application Status </th>
+                    <th scope="col">Action </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of Appliesdetails; let ind = index">
+                    <th scope="row">{{ind}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.lastname}}</td>
+                    <td>{{i.Etat}}</td>
+                    <td><a [href]="'http://127.0.0.1:3000/getCV/' + i.CV" target="_blank" > 
+                        View
+                    </a></td>
+
+                    <td>
+                        <select name="Status" id="Status" [(ngModel)]="i.selectedStatus">
+                            <option value="In Progress">In Progress</option>
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </td>
+                    <td><button class="btn btn-primary" (click)="UpdateStatus(i.selectedStatus,i._id)"> Update </button></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- End Primary Color Bordered Table -->
+
+    </div>
+</div>

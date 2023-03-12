@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApplyService } from 'src/app/Services/apply.service';
 import { EndpointService } from 'src/app/Services/endpoint.service';
 import { OffreService } from 'src/app/Services/offre.service';
 import { RecruteurService } from 'src/app/Services/recruteur.service';
@@ -19,7 +20,7 @@ export class TouslesoffresComponent implements OnInit {
   itemsPerPage: number = 10;
   totalItems: number;
 
-  constructor(public endpoint: EndpointService, private Recruteur: RecruteurService, private router: Router, public Offre: OffreService) { }
+  constructor(private Apply:ApplyService,public endpoint: EndpointService, private Recruteur: RecruteurService, private router: Router, public Offre: OffreService) { }
 
   ngOnInit() {
     this._id = localStorage.getItem('id');
@@ -29,8 +30,22 @@ export class TouslesoffresComponent implements OnInit {
         this.Offredetails = this.respone;
         this.filteredOffredetails = this.Offredetails;
         console.log(this.Offredetails);
+        for(let i=0; i<this.Offredetails.length; i++) {
+          const idOffer = this.Offredetails[i]._id;
+          console.log(idOffer);
+          this.Apply.getbyidoffer(idOffer).subscribe(
+            (res: any) => {
+              const numObjectsReturned = res.length;
+              console.log(numObjectsReturned);
+              // set the numAppliers property on the i object to the number of objects returned by the call
+              this.Offredetails[i].numAppliers = numObjectsReturned;
+            }
+          );
+        }
       }
     );
+    
+
   }
 
   search() {

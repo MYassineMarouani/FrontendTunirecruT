@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit {
     fd.append('CV', this.file1);
     fd.append('name', this.Candidatedetails.name);
     fd.append('email', this.Candidatedetails.email);
-    fd.append('password', this.Candidatedetails.Telephone);
+    fd.append('Telephone', this.Candidatedetails.Telephone);
     fd.append('Company', this.Candidatedetails.Age);
     fd.append('lastname', this.Candidatedetails.lastname);
     this.Candidate.update(this._id,fd).subscribe(

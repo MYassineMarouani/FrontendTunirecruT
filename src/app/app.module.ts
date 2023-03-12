@@ -27,6 +27,8 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { CandidateheaderComponent } from './Components/candidateheader/candidateheader.component';
 import { ApplystatusComponent } from './Components/applystatus/applystatus.component';
 import { AllappliersComponent } from './Components/allappliers/allappliers.component';
+import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
+import { EntermailComponent } from './Components/entermail/entermail.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { AllappliersComponent } from './Components/allappliers/allappliers.compo
     ProfileComponent,
     CandidateheaderComponent,
     ApplystatusComponent,
-    AllappliersComponent
+    AllappliersComponent,
+    ResetpasswordComponent,
+    EntermailComponent
   ],
   imports: [
     BrowserModule,

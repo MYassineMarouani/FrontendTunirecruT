@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { EndpointService } from './endpoint.service';
-
 @Injectable({
   providedIn: 'root'
 })
 export class CandidateService {
+  private resetPasswordUrl = '/candidates/reset-password';
 
   constructor(private router:Router,private http: HttpClient , private endpoint: EndpointService) { }
   login(candidate:any) {
@@ -44,4 +44,10 @@ export class CandidateService {
     localStorage.removeItem('token')
     this.router.navigate(['/login'])
   }
+  resetPassword(email: string) {
+    return this.http.post(this.endpoint.url + 'Candidate/reset-password/', { email });
+  }
+  
+
+  
 }
